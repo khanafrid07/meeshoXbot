@@ -1,0 +1,33 @@
+{
+  "name": "afridxmeesho",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/bot.ts",
+    "dev:index": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/bot.js",
+    "seed": "tsx src/seed.ts",
+    "test:session": "tsx src/test-session.ts",
+    "adb": "tsx src/adb-automator.ts",
+    "order": "tsx src/api-order.ts",
+    "get-address": "tsx src/get-address.ts",
+    "auth-probe": "tsx src/auth-probe.ts"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@types/qrcode": "^1.5.6",
+    "axios": "^1.21.1",
+    "dotenv": "^18.0.10",
+    "mongoose": "^9.12.1",
+    "playwright": "^1.65.0",
+    "qrcode": "^1.5.4",
+    "telegraf": "^4.16.3"
+  }
+}

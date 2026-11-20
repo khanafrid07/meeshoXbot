@@ -1,0 +1,32 @@
+{
+  "mobile": "8002270099",
+  "user_id": 614256655,
+  "phone": "+918002270099",
+  "xo": "eyJ0eXBlIjoiY29tcG9zaXRlIn0=.eyJqd3QiOiJleUpoYkdjaU9pSklVekkxTmlJc0ltaDBkSEJ6T2k4dmJXVmxjMmh2TG1OdmJTOXBjMjlmWTI5MWJuUnllVjlqYjJSbElqb2lTVTRpTENKb2RIUndjem92TDIxbFpYTm9ieTVqYjIwdmRtVnljMmx2YmlJNklqRWlMQ0owZVhBaU9pSktWMVFpZlEuZXlKbGVIQWlPakUzT1RRMU9ERTRNemdzSW1oMGRIQnpPaTh2YldWbGMyaHZMbU52YlM5cGJuTjBZVzVqWlY5cFpDSTZJbU5oTURJM1pqQmxOR1ZrTW1VeU5ESTBZVEkxTUdWbE56WTNPVGxpTURVNElpd2lhSFIwY0hNNkx5OXRaV1Z6YUc4dVkyOXRMM1Z6WlhKZmFXUWlPaUkyTVRReU5UWTJOVFVpTENKcFlYUWlPakUzT1RRME1Ea3dNemg5Lk9IOGhyVWgtaDJyTkd2QnlmMTFXQzBvX0xINkV1bVU4S3I3c29yRV9vNTAiLCJ4byI6ImUzMDA2MDIyNDE1MjQ1ZmJhYzFmZjE5MjZkMTQ4NjIxIn0=",
+  "ox": "G76Z0ZezoEXmrWtWbJsVgyJ12lh1fubxrrtwUzmtNB8_3l0Vzj8SRE-21mnBpehlKmeuWBJjCunwDmikQJ_VmIwR6gWQvgSC-gDeIblbw2k1ljJNWPt-kWdqdfhO8vTUTvLzRw",
+  "instance_id": "ca027f0e4ed2e2424a250ee76799b058",
+  "gaid": "5bdb1f82-6a50-4fac-ae2e-37edef80ece7",
+  "identity": {
+    "instance_id": "ca027f0e4ed2e2424a250ee76799b058",
+    "gaid": "5bdb1f82-6a50-4fac-ae2e-37edef80ece7",
+    "android_id": "755570682aa3739b",
+    "media_id": "74160aa061c615986271bc86675b234b238c6ebcb6d4fb4a809f1612de9ee47f",
+    "app_session_id": "08cf8bf2-f9ac-4b5b-a176-56ae6e51fd51",
+    "make": "Vivo",
+    "model": "Y28 5G",
+    "build": "UP1A.231005.007",
+    "android": "14",
+    "dalvik_ua": "Dalvik/2.1.0 (Linux; U; Android 14; Y28 5G Build/UP1A.231005.007) otplesssdk",
+    "connection_type": "WIFI",
+    "carrier": "",
+    "screen_width": 1080,
+    "screen_height": 2388,
+    "screen_dpi": 400,
+    "fcm_token": "V-ywKiiXL3j:APA91bFcCLgmUWneDLQnBdFzGn_-qb5a6zIMArcr5fhcSMYCXZK3P4iNC5kvegHy7OJhrvLspdcN20cafXmGiw1funZMZtvcvl-X6zIiedL1hauHafKdKB69J7IpdN10OTfDKCE5VF4u",
+    "xff": "27.63.185.99",
+    "anon_xo": "eyJ0eXBlIjoiY29tcG9zaXRlIn0=.eyJqd3QiOiJleUpoYkdjaU9pSklVekkxTmlJc0ltaDBkSEJ6T2k4dmJXVmxjMmh2TG1OdmJTOXBjMjlmWTI5MWJuUnllVjlqYjJSbElqb2lTVTRpTENKb2RIUndjem92TDIxbFpYTm9ieTVqYjIwdmRtVnljMmx2YmlJNklqRWlMQ0owZVhBaU9pSktWMVFpZlEuZXlKbGVIQWlPakU1TlRJd09EZzRORFFzSW1oMGRIQnpPaTh2YldWbGMyaHZMbU52YlM5aGJtOXVlVzF2ZFhOZmRYTmxjbDlwWkNJNkltWmlOemszTlRWaExUWTRNV1V0TkRSaU55MDRPRFJsTFRaalpUSTJZV05pWVRNeE1DSXNJbWgwZEhCek9pOHZiV1ZsYzJodkxtTnZiUzlwYm5OMFlXNWpaVjlwWkNJNkltTmhNREkzWmpCbE5HVmtNbVV5TkRJMFlUSTFNR1ZsTnpZM09UbGlNRFU0SWl3aWFXRjBJam94TnprME5EQTRPRFEwZlEud2pBczhJZy1iQ1lFdHZiMDVrOEE5cUdTd0E2cXRjSEh6VkpjbVRvajNXWSIsInhvIjoiIn0=",
+    "_referral_done": true,
+    "gender": "Female",
+    "age_group": "19-24"
+  }
+}
