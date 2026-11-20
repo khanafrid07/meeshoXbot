@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 import * as path from 'path';
 import * as fs from 'fs';
 import mongoose from 'mongoose';
+
 import QRCode from 'qrcode';
 import { resolveProduct } from './product-helper.js';
 import {
@@ -15,6 +16,9 @@ import {
     incrementAccountOrderCount,
     isMongoConnected
 } from './account-manager.js';
+import dns from "node:dns";
+dns.setDefaultResultOrder("ipv4first");
+
 
 dotenv.config();
 if (!process.env.BOT_TOKEN) dotenv.config({ path: path.resolve('..', '.env') });
@@ -54,7 +58,7 @@ export function parseSessionInput(text: string): any | null {
         const acc: any = {};
         const getHeader = (name: string) => {
             const m = trimmed.match(new RegExp(`-H\\s+['"]${name}:\\s*([^'"]+)['"]`, 'i')) ||
-                      trimmed.match(new RegExp(`['"]?${name}['"]?:\\s*['"]?([^'"]+)['"]?`, 'i'));
+                trimmed.match(new RegExp(`['"]?${name}['"]?:\\s*['"]?([^'"]+)['"]?`, 'i'));
             return m?.[1] ? m[1].trim() : null;
         };
 
@@ -537,7 +541,7 @@ function saveOrder(order: any) {
         fs.writeFileSync('orders.json', JSON.stringify(orders, null, 2));
 
         if (order.accountUserId) {
-            incrementAccountOrderCount(Number(order.accountUserId)).catch(() => {});
+            incrementAccountOrderCount(Number(order.accountUserId)).catch(() => { });
         }
     } catch (e: any) {
         console.error('Failed to save order to orders.json:', e.message);
@@ -763,7 +767,7 @@ async function runCheckoutPipeline(ctx: any) {
         // 5. Payment Info
         currentStepName = 'POST /api/1.0/cart/paymentinfo';
         await ctx.reply('💳 <b>[4/5]</b> Fetching payment & billing details...', HTML);
-        
+
         let isCOD = s.paymentMethod === 'cod';
 
         const paymentInstrument = isCOD ? null : {
@@ -813,7 +817,7 @@ async function runCheckoutPipeline(ctx: any) {
         // Calculate amount accurately from Meesho paymentinfo result
         const resTotal = payRes.data?.result?.total || payRes.data?.result?.effective_total;
         const resPpd = payRes.data?.result?.effective_total_with_ppd;
-        let customerAmount = isCOD 
+        let customerAmount = isCOD
             ? (resTotal || s.price || 0)
             : (resPpd || resTotal || s.price || 0);
 
@@ -913,7 +917,7 @@ async function runCheckoutPipeline(ctx: any) {
         }
 
         const orderNum = orderRes.data?.order_num || orderRes.data?.data?.order_num || orderRes.data?.order_id || 'OK';
-        
+
         let intentUrl = '';
         let transactionId = '';
 
@@ -1141,9 +1145,9 @@ async function showMyOrders(ctx: any): Promise<void> {
                     const st = mo.order_status_message || mo.order_status || mo.status || 'Active';
                     const amt = mo.total_amount || mo.customer_amount || mo.amount || '';
                     liveMsg += `🛒 <b>${H(pTitle)}</b>\n` +
-                               `Order: <code>#${H(oNum)}</code>\n` +
-                               (amt ? `💰 Amount: ₹${amt} | ` : '') +
-                               `Status: <b>${H(st)}</b>\n\n`;
+                        `Order: <code>#${H(oNum)}</code>\n` +
+                        (amt ? `💰 Amount: ₹${amt} | ` : '') +
+                        `Status: <b>${H(st)}</b>\n\n`;
                 });
             }
         } catch (meErr: any) {
@@ -1170,8 +1174,8 @@ async function showMyOrders(ctx: any): Promise<void> {
         let msg = '📦 <b>Recent Bot Orders History:</b>\n\n';
         orders.slice(0, 5).forEach((o: any) => {
             msg += `🛒 <b>${H(o.productTitle || o.productId)}</b>\n` +
-                   `Order: <code>#${H(o.orderNum)}</code>\n` +
-                   `💰 Amount: ₹${o.amount} | Status: <b>${H(o.status)}</b>\n\n`;
+                `Order: <code>#${H(o.orderNum)}</code>\n` +
+                `💰 Amount: ₹${o.amount} | Status: <b>${H(o.status)}</b>\n\n`;
         });
         await ctx.reply(msg, HTML);
     } catch (e: any) {
@@ -1185,7 +1189,7 @@ async function sendAccountSelector(ctx: any, page = 1, edit = false): Promise<vo
 
     if (!accounts.length) {
         const text = '📂 <b>No Meesho Accounts Saved Yet!</b>\n\n' +
-                     'Tap <b>➕ Add JSON</b> below or paste your session JSON / cURL command here:';
+            'Tap <b>➕ Add JSON</b> below or paste your session JSON / cURL command here:';
         if (edit && ctx.callbackQuery) {
             try { await ctx.editMessageText(text, HTML); } catch { await ctx.reply(text, HTML); }
         } else {
@@ -1201,7 +1205,7 @@ async function sendAccountSelector(ctx: any, page = 1, edit = false): Promise<vo
     const pageAccounts = accounts.slice(startIdx, startIdx + pageSize);
 
     let text = `👤 <b>Select Account</b> · ${accounts.length} total\n` +
-               `⭐ <i>last used</i> · 🟢 <i>used</i> · ⚪ <i>unused (FOD Ready)</i>\n`;
+        `⭐ <i>last used</i> · 🟢 <i>used</i> · ⚪ <i>unused (FOD Ready)</i>\n`;
 
     const inlineKeyboard: any[][] = [];
 
